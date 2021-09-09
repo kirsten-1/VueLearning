@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <script>
+        var body = document.body;
+        body.addEventListener("click",function(event){
+            console.log("body");
+        },true)
+        var box = document.getElementById("box");
+        box.addEventListener("click",function(event){
+            console.log("box")
+        },true)
+    </script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #box{
+            width: 302px;
+            margin: 50px auto;
+            border:1px solid #ddd;
+        }
+        #box #header{
+            height: 35px;
+            line-height: 35px;
+        }
+        #box #header span{
+            float: left;
+            border-right: 1px solid #fff;
+            background: #ccc;
+            color: #fff;
+            width: 100px;
+            text-align: center;
+            cursor: pointer;
+        }
+        #box #header span:last-child{
+            border-right: none;
+        }
+        #box #header span.cur{
+            background-color: #fff;
+            color: purple;
+        }
+        #box .content{
+            line-height: 30px;
+            font-size:14px;
+            padding: 5px;
+        }
+        #box .content p{
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div id="header">
+            <span :class="{cur:curState == index}" v-for="(item,index) in hTitle" :key="index" @mouseenter="displayState(index)">{{item}}</span>
+        </div>
+        <div class="content" v-show="curState == 0">
+            <p>首页首页首页首页首页首页</p>
+            <p>首页首页首页首页首页首页</p>
+            <p>首页首页首页首页首页首页</p>
+            <p>首页首页首页首页首页首页</p>
+            <p>首页首页首页首页首页首页</p>
+        </div>
+        <div class="content" v-show="curState == 1">
+            <p>科学科学科学科学科学科学</p>
+            <p>科学科学科学科学科学科学</p>
+            <p>科学科学科学科学科学科学</p>
+            <p>科学科学科学科学科学科学</p>
+            <p>科学科学科学科学科学科学</p>
+        </div>
+        <div class="content" v-show="curState == 2">
+            <p>新闻新闻新闻新闻新闻新闻</p>
+            <p>新闻新闻新闻新闻新闻新闻</p>
+            <p>新闻新闻新闻新闻新闻新闻</p>
+            <p>新闻新闻新闻新闻新闻新闻</p>
+            <p>新闻新闻新闻新闻新闻新闻</p>
+        </div>
+
+    </div>
+    <script src="./js/vue.js"></script>
+    <script>
+        var vue = new Vue({
+            el:"#box",
+            data:{
+                hTitle:["首页","科学","新闻"],
+                curState:0  //显示状态
+            },
+            methods:{
+                displayState(index){
+                    this.curState = index;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

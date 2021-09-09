@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,tr,td,th{
+            border: 1px solid #222;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <table>
+            <tr>
+                <th>name</th>
+                <th>age</th>
+                <th>sex</th>
+                <th>height</th>
+            </tr>
+            <tr v-for="(item,key) in arr" :key="key">
+                <td>{{item.name}}</td>
+                <td>{{item.age}}</td>
+                <td>{{item.sex}}</td>
+                <td>{{item.height}}</td>
+            </tr>
+        </table>
+    </div>
+    <script src="./js/vue.js"></script>
+    <script>
+        var vue = new Vue({
+            el:"#app",
+            data:{
+                arr:[
+                    {name:"John",age:18,sex:"male",height:178},
+                    {name:"Amy",age:18,sex:"female",height:165},
+                    {name:"Kate",age:19,sex:"female",height:160},
+                    {name:"Bob",age:20,sex:"male",height:173}
+                ]
+            }
+        })
+    </script>
+</body>
+</html>

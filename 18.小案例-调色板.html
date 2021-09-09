@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p.picker{
+            background-color: blue;
+            width: 200px;
+            height: 200px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="app">
+        <p class="picker" :style="{background:'rgb('+r+','+g+','+b+')'}"></p>
+        <p>
+            r:
+            <input type="range" v-model="r" min="0" max="255"> <input type="number" v-model="r" min="0" max="255">
+        </p>
+        <p>
+            g:
+            <input type="range" v-model="g" min="0" max="255"> <input type="number" v-model="g" min="0" max="255">
+        </p>
+        <p>
+            b:
+            <input type="range" v-model="b" min="0" max="255"> <input type="number" v-model="b" min="0" max="255">
+        </p>
+    </div>
+    <script src="./js/vue.js"></script>
+    <script>
+        var vue = new Vue({
+            el:"#app",
+            data:{
+                r:100,
+                g:123,
+                b:45
+            }
+        })
+    </script>
+</body>
+</html>

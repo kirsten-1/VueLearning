@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 400px;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <img :src="'./images/img0'+url+'.png'" alt="">
+    <button @click="add">按我加1</button>
+    <button @click="minus">按我减1</button>
+    <script src="./js/vue.js"></script>
+    <script>
+        var vue = new Vue({
+            el:"#app",
+            data:{
+                url:2
+            },
+            methods:{
+                add(){
+                    this.url ++;
+                    this.url > 5 ? 0 : this.url;
+                },
+                minus(){
+                    this.url --;
+                    this.url < 2 ? 5 : this.url;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- 按下ctrl和C  C的keyCode是67 -->
+        <button @keyDown.ctrl.67="show">按我</button>
+    </div>
+    <script src="./js/vue.js"></script>
+    <script>
+        var vue = new Vue({
+            el:"#app",
+            methods:{
+                show(){
+                    console.log("按下了ctrl和C")
+                }
+            }
+        })
+    </script>
+</body>
+</html>

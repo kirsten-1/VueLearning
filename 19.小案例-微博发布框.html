@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .warning{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <textarea cols="30" rows="10" v-model="content">聊聊你今天的心情？</textarea>
+        <p :class="{warning:content.length > 100}">{{content.length}}/100</p>
+        <button :disabled="content.length > 100">发布</button>
+        <button :disabled="content.length <= 0" @click="clear">清空</button>
+    </div>
+    <script src="./js/vue.js"></script>
+    <script>
+        var vue = new Vue({
+            el:"#app",
+            data:{
+                content:""
+            },
+            methods:{
+                clear(){
+                    this.content = ''
+                }
+            }
+        })
+    </script>
+</body>
+</html>

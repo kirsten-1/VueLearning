@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            width: 100px;
+            height: 100px;
+            font-size: 20px;
+            color: white;
+            background-color: blue;
+        }
+        .pink{
+            background-color: pink;
+        }
+        .red{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div>
+            <p :class="{red:a>=5 && a<10,pink:a>=10}">{{a}}</p>
+        </div>
+        <button @click="add">按我加1</button>
+        <button @click="minus">按我减1</button>
+    </div>
+    <script src="./js/vue.js"></script>
+    <script>
+        var vue = new Vue({
+            el:"#app",
+            data:{
+                a:0
+            },
+            methods:{
+                add(){
+                    this.a++;
+                },
+                minus(){
+                    this.a--;
+                }
+            }
+
+        })
+    </script>
+</body>
+</html>

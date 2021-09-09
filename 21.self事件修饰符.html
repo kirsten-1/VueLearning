@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer{
+            width: 200px;
+            height: 200px;
+            padding: 30px;
+            background-color: pink;
+            margin: 30px auto;
+            border-radius: 50%;
+        }
+        .outer .center{
+            width: 150px;
+            height: 150px;
+            background-color: cyan;
+            padding: 30px;
+            margin: 0 auto;
+            border-radius: 50%;
+        }
+        .outer .center .inner{
+            width: 100px;
+            height: 100px;
+            background-color: orangered;
+            margin: 0 auto;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="outer" @click.self="outer">
+            <div class="center" @click.self="center">
+                <div class="inner" @click.self="inner"></div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/vue.js"></script>
+    <script>
+        var vue = new Vue({
+            el:"#app",
+            methods:{
+                outer(){
+                    console.log("outer")
+                },
+                center(){
+                    console.log("center")
+                },
+                inner(){
+                    console.log("inner")
+                }
+            }
+        })
+    </script>
+</body>
+</html>
